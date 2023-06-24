@@ -31,4 +31,11 @@ let empty_lst lst =
   | [] -> "empty list my dude"
   | h :: _t -> h;;
 
-let lst = ["william"; "kevin"] in empty_lst lst |> print_endline |> print_newline;;
+let lst = ["william"; "kelvin"] in empty_lst lst |> print_endline |> print_newline;;
+
+let rec from i j l = if i > j then l else from i (j - 1) (j :: l)
+
+let rec map f lst =
+  match lst with
+  | [] -> []
+  | h :: t -> f h :: map f t
